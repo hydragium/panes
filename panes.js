@@ -77,6 +77,7 @@ export function Panes(params) {
         self.closeAll(true);
       }
 
+      //TODO: especially this 💩💩💩
       if (target.matches(`.${self.params.pane_next_button_class}`)) {
         e.preventDefault();
         id = target.closest(`.${self.params.pane_class}`).getAttribute('id');
@@ -94,7 +95,8 @@ export function Panes(params) {
           self.close(id, true);
           return;
         }
-
+        
+        old_target.removeAttribute('open');
         self.close(id);
 
         setTimeout(function(){
